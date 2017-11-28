@@ -1,0 +1,10 @@
+2017-11-28 08:43:17.573 +01:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2017-11-28 08:43:17.704 +01:00 [DBG] Using idsrv as default scheme for authentication
+2017-11-28 08:43:17.710 +01:00 [DBG] Using idsrv as default scheme for sign-in
+2017-11-28 08:43:17.710 +01:00 [DBG] Using idsrv as default scheme for sign-out
+2017-11-28 08:43:17.710 +01:00 [DBG] Using idsrv as default scheme for challenge
+2017-11-28 08:43:17.710 +01:00 [DBG] Using idsrv as default scheme for forbid
+2017-11-28 08:43:26.498 +01:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2017-11-28 08:43:26.507 +01:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2017-11-28 08:43:26.507 +01:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2017-11-28 08:43:26.513 +01:00 [DBG] Start discovery request
