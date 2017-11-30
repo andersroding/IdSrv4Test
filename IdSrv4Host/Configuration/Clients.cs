@@ -40,7 +40,8 @@ namespace Host.Configuration
                     {
                         "openid",
                         "profile",
-                        //"api1",
+                        "api1",
+                        "api2"
                         //"write"
                     },
 
@@ -48,8 +49,8 @@ namespace Host.Configuration
                     //RequireConsent = true,
                     //AllowRememberConsent = true,
 
-                },
-#endif
+                }
+#else
 
                 ///////////////////////////////////////////
                 // Console Client Credentials Flow Sample
@@ -310,6 +311,7 @@ namespace Host.Configuration
                         "api1", "api2.read_only", "api2.full_access"
                     }
                 }
+#endif
             };
         }
     }

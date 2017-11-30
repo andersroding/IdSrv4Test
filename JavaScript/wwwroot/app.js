@@ -15,7 +15,6 @@ function log() {
 document.getElementById("login").addEventListener("click", login, false);
 document.getElementById("api").addEventListener("click", api, false);
 document.getElementById("api2").addEventListener("click", api2, false);
-document.getElementById("api3").addEventListener("click", api3, false);
 document.getElementById("logout").addEventListener("click", logout, false);
 
 var config = {
@@ -24,8 +23,7 @@ var config = {
     client_id: "jsidsrv4test",
     redirect_uri: "https://vgids4.anders.test/web/callback.html",
     response_type: "id_token token",
-    //scope:"openid profile api1 write",
-    scope: "openid profile",
+    scope: "openid profile api1 api2",
     post_logout_redirect_uri : "https://vgids4.anders.test/web/index.html"
 };
 var mgr = new Oidc.UserManager(config);
@@ -46,9 +44,7 @@ function login() {
 
 function api() {
     mgr.getUser().then(function (user) {
-        debugger;
-        var url = "https://vgids4.anders.test/api/identity";
-        //var url = "http://localhost:12343/identity";
+        var url = "https://vgids4.anders.test/api_dotnetcore/identity";
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url);
         xhr.onload = function () {
@@ -63,8 +59,7 @@ function api() {
 function api2() {
     mgr.getUser().then(function (user) {
 
-        var url = "https://vgids4.anders.test/api2/identity";
-        //var url = "http://localhost:12343/identity";
+        var url = "https://vgids4.anders.test/api_framework/identity";
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url);
         xhr.onload = function () {
@@ -79,51 +74,6 @@ function api2() {
         xhr.send();
     });
 }
-
-function api3() {
-    mgr.getUser().then(function (user) {
-        var url = "https://vgids4.anders.test/api3/identity";
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", url);
-        xhr.onload = function () {
-            if (xhr.status >= 400) {
-                debugger;
-            } else {
-
-                log(xhr.status, JSON.parse(xhr.responseText));
-            }
-        }
-        xhr.setRequestHeader("Authorization", "Bearer " + user.access_token);
-        xhr.send();
-    });
-}
-
-
-//function useToken() {
-//    clear();
-
-//    var xhr = new XMLHttpRequest();
-//    xhr.onload = function (e) {
-//        if (xhr.status >= 400) {
-//            show({
-//                status: xhr.status,
-//                statusText: xhr.statusText,
-//                wwwAuthenticate: xhr.getResponseHeader("WWW-Authenticate")
-//            });
-//        }
-//        else {
-//            show(JSON.parse(xhr.response));
-//        }
-//    };
-//    xhr.onerror = function (e) {
-//        console.log(e, xhr);
-//        show({ error: "unknown http error" });
-//    };
-//    xhr.open("GET", "http://localhost:2727/identity", true);
-//    xhr.setRequestHeader("Authorization", "Bearer " + token);
-//    xhr.send();
-//}
-
 
 
 function logout() {

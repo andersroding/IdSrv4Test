@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,11 +12,13 @@ namespace API.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var mikaels = new JsonResult(from c in User.Claims select new { c.Type, c.Value });
+            var claims = User.Claims.Select(
+                c => new { c.Type, c.Value }).ToList();
 
-            var fromIdsrvSamples = 
-                new JsonResult(User.Claims.Select(
-                    c => new {c.Type, c.Value}));
+            claims.Insert(0, new { Type = "Timestamp", Value = DateTime.Now.ToString() });
+
+            var fromIdsrvSamples =
+                new JsonResult(claims);
             return fromIdsrvSamples;
         }
     }
