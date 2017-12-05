@@ -26,7 +26,8 @@ namespace Host.Configuration
                     
                     AllowAccessTokensViaBrowser = true,
                     RequireClientSecret = false,
-                    AccessTokenType = AccessTokenType.Jwt,
+                    //AccessTokenType = AccessTokenType.Jwt,
+                    AccessTokenType = AccessTokenType.Reference,
 
                     RedirectUris =
                     {
