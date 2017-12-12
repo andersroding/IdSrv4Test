@@ -80,7 +80,7 @@ namespace Host
                         "https://win-i5vs66s3gnb.priveramikael.com/federationmetadata/2007-06/federationmetadata.xml";
                     options.Wtrealm = "https://vgids4.anders.test/";
                     options.UseTokenLifetime = true;
-                    //TODO ska användas i produktion? options.RequireHttpsMetadata = true;
+                    options.RequireHttpsMetadata = true;
                     options.CallbackPath = new PathString("/signin-wsfed");
                     //options.RemoteSignOutPath = new PathString("/signout-adfs");
 

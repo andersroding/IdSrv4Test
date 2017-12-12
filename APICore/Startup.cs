@@ -27,7 +27,7 @@ namespace API
                 {
                     //options.Authority = "https://vgids4.anders.test/identityserver/core";// "https://localhost:44333/core";
                     options.Authority = "https://vgids4.anders.test/identityserver";
-                    options.RequireHttpsMetadata = false;
+                    options.RequireHttpsMetadata = true;
                     options.ApiName = "api1";
                     options.ApiSecret = "secret";
                 });
