@@ -32,7 +32,7 @@ namespace Host.Configuration
                 new ApiResource("api1", "Some API .Net Core")
                 {
                     // this is needed for introspection when using reference tokens
-                    ApiSecrets = { new Secret("secret".Sha256()) },
+                    ApiSecrets = { new Secret("secret".Sha256()) }, //bättre secret behövs såklart i produktion...
 
                     UserClaims =
                     {
@@ -45,7 +45,7 @@ namespace Host.Configuration
                 new ApiResource("api2", "Some API .Net Framework")
                 {
                     // this is needed for introspection when using reference tokens
-                    ApiSecrets = { new Secret("secret".Sha256()) }
+                    ApiSecrets = { new Secret("secret".Sha256()) } //bättre secret behövs såklart i produktion...
                 }
 
                 

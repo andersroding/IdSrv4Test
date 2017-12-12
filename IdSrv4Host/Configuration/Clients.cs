@@ -20,7 +20,6 @@ namespace Host.Configuration
                     ClientId = "jsidsrv4test",
                     ClientName = "JavaScript Client",
                     ClientUri = "https://vgids4.anders.test/web/",
-                    //Flow = Flows.Implicit,
                     
                     AllowedGrantTypes = GrantTypes.Implicit,
                     
@@ -43,10 +42,9 @@ namespace Host.Configuration
                         "profile",
                         "api1",
                         "api2"
-                        //"write"
                     },
 
-                    //Anders tillägg 2017-11-23
+                    //Extra parametrar
                     //RequireConsent = true,
                     //AllowRememberConsent = true,
 
